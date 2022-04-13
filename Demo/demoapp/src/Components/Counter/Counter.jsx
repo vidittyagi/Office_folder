@@ -4,6 +4,7 @@ import './counter.css';
 
 const Counter = (props) => {
     //created counterVal state for setting the counter value after decreating or increamenting
+    let a =10;
     const [counterVal,setcounterVal] = useState("1");
     /*
     load state is used for setting "saving counter value" part
