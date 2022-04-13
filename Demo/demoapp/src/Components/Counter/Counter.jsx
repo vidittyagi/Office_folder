@@ -34,12 +34,13 @@ const Counter = (props) => {
         num += 1;
         setcounterVal(num+"");
     }
-
+    /*
+    API Access problem this is why UseEffect Code is commented 
+    */
     // useEffect(async()=>{
     //     try{
-    //         let url = 'https://interview-8e4c5-default-rtdb.firebaseio.com/front-end/VIDITTYAGIVIDITTYAGI200@GMAIL.COM8585955720';
+    //         let url = 'https://interview-8e4c5-default-rtdb.firebaseio.com/front-end/EluriTarun-19A91A0508@aec.edu.in-7981878338';
     //         let data = await axios.get(url);
-            
     //         console.log(data);
     //         // setloadstate(true);
     //     }
