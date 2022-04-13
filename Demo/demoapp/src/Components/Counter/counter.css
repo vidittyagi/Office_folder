@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+.mainContainer{
+    Width:257;
+    Height:130;
+}
+.container{
+    Color : #B24242;
+    Position : Inside;
+    Width:1;
+    Gap:0px;
+    display: flex;
+    Width: 180px;
+    Height: 56px;
+}
+
+.left{
+    height: 80%;
+    width:30%;
+}
+.mid{
+    height: 80%;
+    width: 30%;
+}
+.right{
+    height: 80%;
+    width:30%;
+}
+/* right:hover{
+    background-color: red;
+} */
+.plusBtn{
+    height: 100%;
+    width: 100%;
+}
+.minusBtn{
+    height: 100%;
+    width: 100%;
+}
+.inputcounterval{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
