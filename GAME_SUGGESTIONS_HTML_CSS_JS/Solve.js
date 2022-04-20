@@ -39,8 +39,9 @@ async function dataAPI(){
         or we can also use createElement() to add a new div 
         instead of using previous one
         */
-        // <h1>${data.results[0].name}</h1>
+        
         let gamecard = `
+        <h1>${data.results[0].name}</h1>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
