@@ -7,7 +7,7 @@ async function dataAPI(){
     which will select queries randomly from the array so every time we reload the website
     there will be new query as this dataAPI function will be called again.
     */
-    let query = ["Gta5","Batman","Iron Man","Captain America","Far Cry","Avengers","Counter Strike","League Of Legends","Hitman","The Witcher","Red Dead Redemption"];
+    let query = ["Gta5","Batman","Iron Man","Captain America","Far Cry","Avengers","Counter Strike","Minecraft","Hitman","The Witcher","Red Dead Redemption"];
     
     /*
     Now we have used javascript inbuild random function 
@@ -22,17 +22,23 @@ async function dataAPI(){
     Now take floor = 6 (6.3 floor = 6 and 6.7 floor = 6)
     and add 1 to it.
     */
-   
+
     let random = Math.floor(Math.random() * 10) + 1;
     // console.log(random);  // Console Statement to view random number generated on browser console
 
     //Making a call to API using fetch function to fetch data
     let response = await fetch("https://api.rawg.io/api/games?key=5c14b272c6594eb7857bb4a774e32aef&search="+ query[random]);
+    //API response in JSON format
     let data = await response.json();
 
+    //Container is the div element that we have to add our Background Image to.
     let container = document.querySelector('.div1');
-    
-    // for(let i=0;i<data.results.length;i++){
+
+        /*
+        DOM manipulation using innerHTML() functionality in javascript
+        or we can also use createElement() to add a new div 
+        instead of using previous one
+        */
         // <h1>${data.results[0].name}</h1>
         let gamecard = `
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -56,7 +62,29 @@ async function dataAPI(){
           <span class="sr-only">Next</span>
         </a>
       </div>`
+      //Changing innerHTML of 1st div inside mainDiv class div 
       container.innerHTML += gamecard;
-    // }
+      
+      /*
+      We can also use for loop for mapping all data that is coming from API
+      for(let i=0;i<data.results.length;i++){
+      }
+      */
 }
 dataAPI();
+
+//This Part of File Handles Suggestions
+let addToDoButton = document.getElementById('addToDo');
+let toDoContainer = document.getElementById('toDoContainer');
+let inputField = document.getElementById('inputField'); 
+
+addToDoButton.addEventListener('click',function(){
+    //A p tag is created for suggestion text
+    var paragraph = document.createElement('p');
+    paragraph.classList.add('paragraph-styling');
+    let value = inputField.value;
+    if(value == "") return;
+    paragraph.innerText = value;
+    toDoContainer.appendChild(paragraph);
+    inputField.value = "";
+});
