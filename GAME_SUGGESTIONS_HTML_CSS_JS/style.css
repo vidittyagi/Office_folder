@@ -12,6 +12,8 @@
 .div2{
     height: 30%;
     width: 100%;
+    background-color: black;
+    color: red;
 }
 
 .div3{
@@ -66,3 +68,10 @@
     border: 2px solid black;
     background-color: whitesmoke;
 }
+
+.div1 h1{
+    background-color: black;
+    color: red;
+    padding: 0%;
+}
+
