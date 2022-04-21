@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        //If no empty string is left then display Tie
+    //If no empty string is left then display Tie
     if (!board.includes(''))
         announce(TIE);
     }
@@ -113,7 +113,6 @@ window.addEventListener('DOMContentLoaded', () => {
         if (tile.innerText === 'X' || tile.innerText === 'O'){
             return false;
         }
-
         return true;
     };
 
