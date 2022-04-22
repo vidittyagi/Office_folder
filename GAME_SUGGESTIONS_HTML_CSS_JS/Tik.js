@@ -67,7 +67,8 @@ window.addEventListener('DOMContentLoaded', () => {
     if all is x or all is 0 then make userWonThisRound true
     and later check if userWonThisRound is true then make Playerxwon variable announce or display
     */
-    function handleResult() {
+
+    async function handleResult() {
         let userWonThisRound = false;
         for (let i = 0; i <= 7; i++) {
             const winCondition = wC[i];
@@ -83,9 +84,32 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-    if (userWonThisRound) {
-            announce(cp === 'X' ? PLAYERX_WON : PLAYERO_WON);
+    if (userWonThisRound){
+            let winningPerson = '';
+            let wp = '';
+            if(cp === 'X'){
+                wp = PLAYERX_WON;
+                winningPerson = 'X';
+            }
+            else{
+                wp = PLAYERO_WON;
+                winningPerson = '0';
+            }
+
+            announce(wp);
             activeGame = false;
+
+            let gameWinnerobj = {
+                gameWinner : winningPerson
+            }
+
+            let response = await fetch('http://localhost:3000/postGameScore',{
+                method:"POST",
+                headers:{"content-type": "application/json"},
+                body:JSON.stringify(gameWinnerobj)
+            });
+            let data = await response.text();
+            console.log(data);
             return;
         }
 

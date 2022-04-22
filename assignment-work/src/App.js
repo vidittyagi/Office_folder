@@ -7,7 +7,7 @@ const SEARCH="https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a5
 
 function App() {
   const[movies,setMovies]=useState([]);
-  const[searchTerm,setSearchTerm]=useState("")
+  const[searchTerm,setSearchTerm]=useState("");
 
   useEffect(()=>{
     fetch(API).then((res)=>res.json()).then((data)=>{
@@ -23,7 +23,7 @@ function App() {
     }
   }
   console.log(movies)
-  return <div className='mov-holder'>
+  return <div style={{backgroundColor : "black"}} className='mov-holder'>
     <div style={{display:"flex",flexDirection:"row"}}>
       <input type="text" placeholder='Search Movie' onChange={(e)=>{setSearchTerm(e.target.value)}}></input>
       <button onClick={()=>{getResult()}}>Search</button>
@@ -35,8 +35,13 @@ function App() {
         })
         }
     </div>
+    <div 
+    style={{height:"10vh",width:"100vw",color:"red",display:"flex",justifyContent:"center",alignItems:"center"}}
+    className='favouriteList'
+    >
+    Batman , heeman , superman 
     </div>
-
+    </div>
 }
 
 export default App;

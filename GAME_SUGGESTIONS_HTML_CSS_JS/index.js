@@ -27,9 +27,6 @@ const connection = mongoose.connection;
         type: String,
         required: true
       },
-      suggestions:{
-        type:String
-      },
   });
 
   const suggestion = new mongoose.Schema({
@@ -40,11 +37,19 @@ const connection = mongoose.connection;
     suggestion: {
       type: String,
       required: true
+    },
+  });
+
+  const winnerList = new mongoose.Schema({
+    username :{
+      type : String,
+      required : true
     }
   });
   
 const userdata = connection.model('users',user);
 const suggestions = connection.model('suggestion',suggestion);
+const gamescore = connection.model('winnerList', winnerList);
 
 app.post('/signin',(req,res)=>{
 
@@ -93,10 +98,9 @@ app.post('/postSuggestion',(req,res)=>{
 app.post('/postGameScore',(req,res)=>{
     console.log(req.body);
     let gameData = {
-      username: req.body.username,
-      gameScore : req.body.gameScore,
+      gameWinner: req.body.gameWinner,
     }
-  
+
     const doc = new gamescore(gameData);
       doc.save((err) =>{
           if(err)
@@ -104,7 +108,17 @@ app.post('/postGameScore',(req,res)=>{
           else
               res.send('true');
         })
-  
+  });
+
+  app.post('/getGameScore',(req,res)=>{
+    gamescore.find({username: req.body.gameWinner},(err, messages)=> {
+        if(err)
+            res.send('false');
+        else{
+          console.log(messages);
+          res.send(messages[0].suggestion);
+        }
+    });
   });
 
 app.post('/signup',(req,res)=>{
