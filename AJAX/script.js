@@ -15,7 +15,7 @@ async function  dataAPI(e) {
     for (i = 0;i < data.results.length;i++){
  
     let gameCard = `
-    <div class="card" style="width: 20rem;">
+    <div class="card" style="width:20rem;margin-top:10rem;">
      <img src='${data.results[i].background_image}' class="card-img-top">
      <div class="card-body">
      <h5 class="card-title">${data.results[i].name} </h5>
