@@ -1,0 +1,10 @@
+.mov-holder {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}

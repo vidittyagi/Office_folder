@@ -4,20 +4,20 @@
     font-family: 'Itim', cursive;
 }
 
-.background {
-    background-color: #12181B;
+.Maindiv {
+    background-color: black;
     height: 100vh;
     padding-top: 1px;
 }
 
-.title {
-    color: white;
+.titleName{
+    color: red;
     text-align: center;
     font-size: 40px;
     margin-top: 10%;
 }
 
-.display {
+.display{
     color: white;
     font-size: 25px;
     text-align: center;
@@ -25,19 +25,15 @@
     margin-bottom: 1em;
 }
 
-.hide {
+.hide{
     display: none;
 }
 
-.container {
+.container{
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display: grid; */
-    /* grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 33% 33% 33%;
-    max-width: 300px; */
 }
 .row1 > row2 > row3{
     display: flex;
@@ -45,7 +41,7 @@
     align-items: center;
 }
 
-.tile {
+.tile{
     border: 1px solid white;
     min-width: 100px;
     min-height: 100px;
@@ -56,15 +52,15 @@
     cursor: pointer;
 }
 
-.playerX {
-    color: #09C372;
+.playerX{
+    color: yellow;
 }
 
-.playerO {
-    color: #498AFB;
+.playerO{
+    color: green;
 }
 
-.controls {
+.controls{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -72,7 +68,7 @@
     margin-top: 1em;
 }
 
-.controls button {
+.controls button{
     color: white;
     padding: 8px;
     border-radius: 8px;
@@ -82,10 +78,6 @@
     cursor: pointer;
 }
 
-.restart {
-    background-color: #498AFB;
-}
-
-#reset {
-    background-color: #FF3860;
+#reset{
+    background-color: red;
 }

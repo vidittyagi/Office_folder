@@ -1,6 +1,8 @@
 let usrname = document.querySelector('#username-field');
 let pass = document.querySelector('#password-field');
 let loginBtn = document.querySelector('#login-form-submit');
+let mob = document.querySelector('#mobile-field');
+let email = document.querySelector('#email-field');
 
 loginBtn.addEventListener("click" , async function(e){
     e.preventDefault();
@@ -8,9 +10,11 @@ loginBtn.addEventListener("click" , async function(e){
     let userObj ={
         username : usrname.value,
         password : pass.value,
+        mob: mob.value,
+        email:email.value
     }
 
-    let response = await fetch('http://localhost:3000/signin',{
+    let response = await fetch('http://localhost:3000/signup',{
         method:"POST",
         headers:{"content-type": "application/json"},
         body:JSON.stringify(userObj)
@@ -19,10 +23,7 @@ loginBtn.addEventListener("click" , async function(e){
     let data = await response.text();
     // console.log(data);
     if(data === 'true'){
-        let objname = userObj.username;
-        // console.log(objname);
-        localStorage.setItem('userObjectFromLoginPage',objname);
-        window.location.assign("./index.html");
+        window.location.assign("./Login.html");
     }
     else{
     alert("INVALID CREDENTIALS");

@@ -75,17 +75,41 @@ async function dataAPI(){
 dataAPI();
 
 //This Part of File Handles Suggestions
-let addToDoButton = document.getElementById('addToDo');
-let toDoContainer = document.getElementById('toDoContainer');
-let inputField = document.getElementById('inputField'); 
+let addSuggestionBtn = document.getElementById('addToDo');
+let addSuggestionContainer = document.getElementById('toDoContainer');
+let input = document.getElementById('inputField');
 
-addToDoButton.addEventListener('click',function(){
+addSuggestionBtn.addEventListener('click', async function(){
     //A p tag is created for suggestion text
     var paragraph = document.createElement('p');
-    paragraph.classList.add('paragraph-styling');
-    let value = inputField.value;
+    paragraph.classList.add('styling');
+    let value = input.value;
     if(value == "") return;
-    paragraph.innerText = value;
-    toDoContainer.appendChild(paragraph);
-    inputField.value = "";
+    //Username comes from Local Storage, Login page
+    let usernameForAPI = localStorage.getItem('userObjectFromLoginPage');
+    // console.log(usernameForAPI);
+
+    let objOfSuggestion = {
+      username : usernameForAPI,
+      suggestion : value
+    }
+
+    try{
+      let response = await fetch('http://localhost:3000/postSuggestion',{
+        method:"POST",
+        headers:{"content-type": "application/json"},
+        body:JSON.stringify(objOfSuggestion)
+    });
+    let data = await response.text();
+    //For checking API Response
+    console.log(data);
+    }
+    catch(err){
+      console.log(err);
+    }
+
+
+    paragraph.innerText = usernameForAPI + ': - ' + value;
+    addSuggestionContainer.appendChild(paragraph);
+    input.value = "";
 });

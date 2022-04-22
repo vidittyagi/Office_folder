@@ -1,0 +1,35 @@
+.mov {
+    width : 300px;
+    margin: 1rem;
+    background-color: lightcoral;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+}
+.mov img {
+    max-width: 100%;
+}
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.info h3 {
+    margin: 0;
+}
+.description {
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    transform: translateY(102%);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
+}
+.mov:hover .description {
+    transform: translateY(0%);
+}
