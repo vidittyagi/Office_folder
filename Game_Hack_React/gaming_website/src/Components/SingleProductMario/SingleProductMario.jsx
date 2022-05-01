@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { 
+    Carousel
+} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './singleProductMario.css';
 
@@ -6,6 +9,7 @@ const SingleProductMario = () => {
     return ( 
         <div className="containerproductpage">
             <section className='section1'>
+                <h1>Super Mario Product Page</h1>
                 <div className="section1div">
                     <div className="imagediv">
                         <img 
@@ -19,7 +23,7 @@ const SingleProductMario = () => {
                                 <div class="d1">
                                 <p>
                                     <p>4.31,52,412 Ratings & 11,406 Reviews</p>
-                                    <p>Extra ₹2500 off</p>
+                                    {/* <p>Extra ₹2500 off</p> */}
                                     <p id="pricep1">₹10,499 19% off</p>
                                 </p>
                             </div>
@@ -52,8 +56,34 @@ These include a multitude of power-ups and items that give the character special
                
             </section>
 
-
-
+            <section className='section3mario'>
+            <Carousel variant="dark">
+                    <Carousel.Item>
+                        <img
+                        style={{height:"500px",width:"100px"}}
+                        className="d-block w-100"
+                        src="https://images.pexels.com/photos/371924/pexels-photo-371924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="First slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                        className="d-block w-100"
+                        style={{height:"500px",width:"100px"}}
+                        src="https://cdn.pixabay.com/photo/2016/07/30/14/30/yoschi-1557255_1280.jpg"
+                        alt="Second slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                        className="d-block w-100"
+                        style={{height:"500px",width:"100px"}}
+                        src="https://cdn.pixabay.com/photo/2017/08/21/03/38/super-mario-2663951_1280.jpg"
+                        alt="Second slide"
+                        />
+                    </Carousel.Item>
+            </Carousel>
+            </section>
         </div>
      );
 }

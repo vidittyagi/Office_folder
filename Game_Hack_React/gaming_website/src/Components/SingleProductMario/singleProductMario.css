@@ -1,11 +1,5 @@
-* {
-    box-sizing: border-box;
-    margin: 0px;
-    border: 0px;
-}
-
 .containerproductpage{
-    height: 400vh;
+    height: 270vh;
 }
 
 .section1{
@@ -13,12 +7,13 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: azure;
+    background-color: lightgray;
+    flex-direction: column;
 }
 
 .section1div{
     height: 50%;
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -33,9 +28,9 @@
 }
 
 .p1details {
-    background: #FFFFFF;
+    background: lightgray;
     height: 100%;
-    width: 40%;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -44,7 +39,7 @@
 }
 
 .p1description {
-    background: #FFFFFF;
+    background: lightgray;
     height: 92%;
     width: 100%;
     padding: 5px;
@@ -55,7 +50,7 @@
 }
 
 .d1 {
-    background: #FFFFFF;
+    background: lightgray;
     height: 35%;
     width: 100%;
     font-weight: 500;
@@ -66,7 +61,7 @@
 }
 
 .content2p1 {
-    background: #F1F3F6;
+    background: lightgray;
     height: 75vh;
     width: 95%;
     display: flex;
@@ -79,7 +74,7 @@
 #addtocartb {
     background: orange;
     height: 60px;
-    width: 70%;
+    width: 90%;
     cursor: pointer;
 }
 
@@ -88,7 +83,7 @@
 }
 
 .buttonsp1{
-    background: #FFFFFF;
+    background: lightgray;
     height: 20%;
     width: 50%;
     display: flex;
@@ -125,7 +120,12 @@
     padding: 1rem;
 }
 
-
+.section3mario{
+    height: 80vh;
+    width: 96vw;
+    margin-left: 1rem;
+    background-color: black;
+}
 
 
 
