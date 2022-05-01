@@ -15,12 +15,12 @@ const Header = () => {
             <div class="blogs">About Us</div>
             <div class="contact">Contact</div>
         </div>
-        <div class="login">
+        {/* <div class="login">
             <i class="fas fa-user-circle"></i>
             <div class="logintext">
                 SIGNED IN
             </div>
-        </div>
+        </div> */}
         </div>
         </header>
      );

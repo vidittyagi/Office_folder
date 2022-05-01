@@ -1,0 +1,56 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+}
+
+.containerlogin{
+  height: 110vh;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://cdn.pixabay.com/photo/2018/03/17/04/07/tunnel-3233082_1280.jpg');
+}
+
+.loginsection{
+  height: 70%;
+  width: 40%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: lightgray;
+}
+
+.firstdiv{
+  height: 30%;
+  width: 35%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.nd2div{
+  height: 70%;
+  width: 60%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formlogin{
+  height: 100%;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+
