@@ -18,8 +18,8 @@ const SignUpPage = () => {
   }
 
     return(
-        <div className="containerlogin">
-          <section className='loginsection'>
+        <div className="containersignupvala">
+          <section className='signupsection'>
             <div className="firstdiv">
               <img 
               style={{height:"100%",width:"100%"}}
@@ -56,7 +56,7 @@ const SignUpPage = () => {
                   />
 
                   <input 
-                  type="mobile"
+                  type="number"
                   style={{height:"12%",width:"80%",border:"2px solid black",borderRadius:"2px",marginTop:"0.5rem",padding:"0.2rem"}}
                   placeholder='Enter Mobile No.'
                   value={mobile}
@@ -64,7 +64,7 @@ const SignUpPage = () => {
                   />
 
                   <button
-                  style={{height:"12%",width:"40%",marginTop:"1rem",padding:"0.2rem",cursor:"pointer"}}
+                  style={{height:"12%",width:"40%",marginTop:"1rem",cursor:"pointer"}}
                   onClick={(e)=>SolveClick(e)}
                   >Sign Up</button>
                 </form>
@@ -73,7 +73,7 @@ const SignUpPage = () => {
                 className="divinsidediv"
                 style={{display:"flex"}}
                 >
-                  <h4>Do'nt have a account</h4>
+                  <h5>Do'nt have a account</h5>
                   <Link 
                   style={{cursor:"pointer",marginLeft:"0.5rem"}}
                   to="/">

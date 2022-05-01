@@ -4,14 +4,19 @@
     margin: 0px;
 }
 
-.container{
-    height: 400vh;
+.containerhomepage{
+    height: 300vh;
 }
 
 .pehladiv{
     height: 100vh;
     background-image: url('../../Images/game-controller-g0c6b1a50d_1280.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
 }
+
 
 .seconddiv{
     height: 100vh;

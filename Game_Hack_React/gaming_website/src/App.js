@@ -12,6 +12,7 @@ import SingleProductMario from "./Components/SingleProductMario/SingleProductMar
 import CartPage from "./Components/CartPage/CartPage.jsx";
 import PaymentPage from "./Components/PaymentPage/PaymentPage.jsx";
 import ThankYouPage from "./Components/ThankYouPage/ThankYouPage.jsx";
+import SingleProductMinecraft from "./Components/SingleProductMinecraft/SingleProductMinecraft.jsx";
 
 function App(){
   let user = true;
@@ -24,6 +25,7 @@ function App(){
         <Route exact path="/signup" element={<SignUpPage></SignUpPage>}></Route>
         <Route exact path="/homepage" element={<HomePage></HomePage>}></Route>
         <Route exact path="/singleProductMario" element={<SingleProductMario></SingleProductMario>}></Route>
+        <Route path="/singleProductMinecraft" element={<SingleProductMinecraft></SingleProductMinecraft>}></Route>
         <Route exact path="/cartPage" element={<CartPage></CartPage>}></Route>
         <Route path="/paymentPage" element={<PaymentPage></PaymentPage>}></Route>
         <Route path="/thankyoupage" element={<ThankYouPage></ThankYouPage>}></Route>

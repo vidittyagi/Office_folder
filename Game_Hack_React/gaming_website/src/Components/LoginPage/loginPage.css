@@ -14,7 +14,7 @@
 }
 
 .loginsection{
-  height: 70%;
+  height: 75%;
   width: 40%;
   padding: 2rem;
   display: flex;
@@ -50,7 +50,4 @@
   align-items: center;
   flex-direction: column;
 }
-
-
-
 

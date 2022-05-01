@@ -36,20 +36,20 @@ const LoginPage = () => {
                 <form className='formlogin'>
                   {/* <label htmlFor="email">Email</label> */}
                   <input type="text"
-                  style={{height:"12%",width:"80%",border:"2px solid black",borderRadius:"2px",padding:"0.2rem"}}
+                  style={{height:"15%",width:"80%",border:"2px solid black",borderRadius:"2px",padding:"0.2rem"}}
                   placeholder='Enter Username'
                   value={username}
                   onChange={(e)=>{setusername(e.target.value)}}
                   />
                   {/* <label htmlFor="password">Password</label> */}
                   <input type="password"
-                  style={{height:"12%",width:"80%",border:"2px solid black",borderRadius:"2px",marginTop:"0.5rem",padding:"0.2rem"}}
+                  style={{height:"15%",width:"80%",border:"2px solid black",borderRadius:"2px",marginTop:"0.5rem",padding:"0.2rem"}}
                   placeholder='Enter Password'
                   value={pass}
                   onChange={(e)=>{setpass(e.target.value)}}
                   />
                   <button
-                  style={{height:"12%",width:"40%",marginTop:"1rem",padding:"0.2rem",cursor:"pointer"}}
+                  style={{height:"12%",width:"40%",marginTop:"1rem",cursor:"pointer"}}
                   onClick={(e)=>SolveClick(e)}
                   >Login</button>
                 </form>
@@ -57,7 +57,7 @@ const LoginPage = () => {
                 className="divinsidediv" 
                 style={{display:"flex"}}
                 >
-                  <h4>Do'nt have a account</h4>
+                  <h5>Do'nt have a account</h5>
                   <Link 
                   style={{cursor:"pointer",marginLeft:"0.5rem"}}
                   to="/signup">
