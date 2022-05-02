@@ -51,7 +51,6 @@ const CartPage = (props) =>{
                     (
                         <></>
                     )
-               
             }
             
                 <Link className='linkcart' to="/paymentPage">
