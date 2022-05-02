@@ -24,7 +24,7 @@ function App(){
       <div className="App">
       <Header></Header>
       <Routes>
-        <Route exact path="/signin" element={<LoginPage></LoginPage>}></Route>
+        <Route exact path="/" element={<LoginPage></LoginPage>}></Route>
         <Route exact path="/signup" element={<SignUpPage></SignUpPage>}></Route>
         <Route exact path="/homepage" element={<HomePage></HomePage>}></Route>
         <Route exact path="/singleProductMario" element={<SingleProductMario func={setgameName}></SingleProductMario>}></Route>

@@ -12,7 +12,7 @@ const PaymentPage = (props) => {
     let navigate = useNavigate();
 
     const handleClick = (e)=>{
-        if(username == "" && email == "" && cardnumber == "" && expmonth == "" && expyear == "" && cvv == ""){
+        if(username == "" || email == "" || cardnumber == "" || expmonth == "" || expyear == "" || cvv == ""){
             alert("Please fill all the feilds");
             return;
         }

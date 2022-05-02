@@ -30,7 +30,7 @@ const SignUpPage = () => {
       });
       let data = await response.text();
       if(data == "true"){
-        navigate("/signin");
+        navigate("/");
       }
       else alert("Server Error");
       } 
