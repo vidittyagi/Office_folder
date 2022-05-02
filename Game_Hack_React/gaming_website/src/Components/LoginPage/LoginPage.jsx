@@ -7,17 +7,43 @@ const LoginPage = () => {
   const[pass,setpass] = useState("");
   let navigate = useNavigate();
 
-  const SolveClick = (e)=>{
+  const SolveClick = async (e)=>{
     if(username == '' || pass == ''){
       alert("Please fill all fields");
       return;
     }
-    if(username == 'u' && pass == 'p'){
-      navigate("/homepage");
+    e.preventDefault();
+    try {
+      let userObj = {
+        username : username,
+        password : pass
+      }
+  
+      let response = await fetch('http://localhost:3000/signin',{
+          method:"POST",
+          headers:{"content-type": "application/json"},
+          body:JSON.stringify(userObj)
+      });
+  
+      let data = await response.text();
+      console.log(data);
+      if(data == 'true'){
+        navigate("/homepage");
+      }
+      else{
+          alert("Wrong Email Or Password");
+        }
+    } catch (error) {
+      console.log(error);
     }
-    else{
-      alert("Wrong Email Or Password");
-    }
+    
+
+    // if(username == 'u' && pass == 'p'){
+    //   navigate("/homepage");
+    // }
+    // else{
+    //   alert("Wrong Email Or Password");
+    // }
   }
 
 

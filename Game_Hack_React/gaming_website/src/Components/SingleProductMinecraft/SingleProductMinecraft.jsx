@@ -5,7 +5,17 @@ import {
 import { Link } from 'react-router-dom';
 import './singleProductMinecraft.css';
 
-const SingleProductMinecraft = () => {
+const SingleProductMinecraft = (props) => {
+    const[buttonRender,setButtonRender] = useState(false);
+    const handleClickMario = ()=>{
+        let obj = {
+            name :"MineCraft",
+            image : "https://cdn.pixabay.com/photo/2015/12/23/22/36/minecraft-1106253_1280.png",
+            price :"₹49,999"
+        };
+        props.func(obj);
+        setButtonRender(true);
+    }
     return(
     <div className="containerproductpage">
             <section className='section1'>
@@ -18,7 +28,7 @@ const SingleProductMinecraft = () => {
                         alt="Image Not Found" />
                     </div>
                         <div class="p1details">
-                        <h2 class="nametext">Minecraft</h2>
+                        <h2 class="nametext">MineCraft</h2>
                             <div class="p1description">
                                 <div class="d1">
                                 <p>
@@ -28,9 +38,28 @@ const SingleProductMinecraft = () => {
                                 </p>
                             </div>
                             <div class="buttonsp1">
-                                <Link to="/cartPage">
-                                <button id="addtocartb">ADD TO CART</button>
-                                </Link>
+                                {
+                                    buttonRender ?
+                                    (
+                                        <>
+                                        <button id="addtocartb"
+                                        style={{marginBottom:"0.5rem"}}
+                                        >ADDED TO CART</button>
+                                        <Link to="/cartPage">
+                                        <button 
+                                        style={{height:"100%"}}
+                                        id='addtocartb'>VIEW CART</button>
+                                        </Link>
+                                        </>
+                                    )
+                                    :
+                                    (
+                                        <button 
+                                        id="addtocartb"
+                                        onClick={handleClickMario}
+                                        >ADD TO CART</button>
+                                    )
+                                }
                         </div>
                     </div>
                   </div>

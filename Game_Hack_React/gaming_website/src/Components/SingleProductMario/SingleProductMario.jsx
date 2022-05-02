@@ -5,7 +5,18 @@ import {
 import { Link } from 'react-router-dom';
 import './singleProductMario.css';
 
-const SingleProductMario = () => {
+const SingleProductMario = (props) => {
+    const[buttonRender,setButtonRender] = useState(false);
+    const handleClickMario = ()=>{
+        let obj = {
+            name :"Super Mario",
+            image : "https://cdn.pixabay.com/photo/2016/07/30/14/25/mario-1557240_1280.jpg",
+            price :"₹10,499"
+        };
+        props.func(obj);
+        setButtonRender(true);
+    }
+
     return ( 
         <div className="containerproductpage">
             <section className='section1'>
@@ -28,9 +39,28 @@ const SingleProductMario = () => {
                                 </p>
                             </div>
                             <div class="buttonsp1">
-                                <Link to="/cartPage">
-                                <button id="addtocartb">ADD TO CART</button>
-                                </Link>
+                                {
+                                    buttonRender ? 
+                                    (
+                                        <>
+                                        <button id="addtocartb"
+                                        style={{marginBottom:"0.5rem"}}
+                                        >ADDED TO CART</button>
+                                        <Link to="/cartPage">
+                                        <button 
+                                        style={{height:"100%"}}
+                                        id='addtocartb'>VIEW CART</button>
+                                        </Link>
+                                        </>
+                                    )
+                                    :
+                                    (
+                                        <button 
+                                        onClick={handleClickMario}
+                                        id="addtocartb"
+                                        >ADD TO CART</button>
+                                    )
+                                }
                         </div>
                     </div>
                   </div>

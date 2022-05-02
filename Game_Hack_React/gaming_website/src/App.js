@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Redirect,
@@ -15,18 +16,22 @@ import ThankYouPage from "./Components/ThankYouPage/ThankYouPage.jsx";
 import SingleProductMinecraft from "./Components/SingleProductMinecraft/SingleProductMinecraft.jsx";
 
 function App(){
-  let user = true;
+  //This state is used for cart page funtionality
+  const[gameName,setgameName] = useState({});
+  
   return(
-       <Router>
+      <Router>
       <div className="App">
       <Header></Header>
       <Routes>
-        <Route exact path="/" element={<LoginPage></LoginPage>}></Route>
+        <Route exact path="/signin" element={<LoginPage></LoginPage>}></Route>
         <Route exact path="/signup" element={<SignUpPage></SignUpPage>}></Route>
         <Route exact path="/homepage" element={<HomePage></HomePage>}></Route>
-        <Route exact path="/singleProductMario" element={<SingleProductMario></SingleProductMario>}></Route>
-        <Route path="/singleProductMinecraft" element={<SingleProductMinecraft></SingleProductMinecraft>}></Route>
-        <Route exact path="/cartPage" element={<CartPage></CartPage>}></Route>
+        <Route exact path="/singleProductMario" element={<SingleProductMario func={setgameName}></SingleProductMario>}></Route>
+        <Route path="/singleProductMinecraft" element={<SingleProductMinecraft func={setgameName}></SingleProductMinecraft>}></Route>
+        
+        <Route exact path="/cartPage"  element={<CartPage gn={gameName}></CartPage>}></Route>
+
         <Route path="/paymentPage" element={<PaymentPage></PaymentPage>}></Route>
         <Route path="/thankyoupage" element={<ThankYouPage></ThankYouPage>}></Route>
       </Routes>

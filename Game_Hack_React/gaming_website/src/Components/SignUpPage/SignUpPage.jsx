@@ -9,12 +9,35 @@ const SignUpPage = () => {
   const[email,setemail] = useState("");
   let navigate = useNavigate();
 
-  const SolveClick = (e)=>{
+  const SolveClick = async(e) => {
     if(username == '' || pass == '' || mobile == '' || email == ''){
       alert("Please fill all fields");
       return;
     }
-    navigate("/");
+    else{
+      try {
+        let userObj={
+          username : username,
+          password : pass,
+          mob: mobile,
+          email:email
+      }
+  
+      let response = await fetch('http://localhost:3000/signup',{
+          method:"POST",
+          headers:{"content-type": "application/json"},
+          body:JSON.stringify(userObj)
+      });
+      let data = await response.text();
+      if(data == "true"){
+        navigate("/signin");
+      }
+      else alert("Server Error");
+      } 
+      catch (error) {
+        console.log(error);
+      }
+    }
   }
 
     return(
