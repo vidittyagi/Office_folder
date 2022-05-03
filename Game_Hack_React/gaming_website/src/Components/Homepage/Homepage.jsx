@@ -61,7 +61,7 @@ const HomePage = ()=>{
                 <div className="videodiv">
                 {/* https://www.youtube.com/watch?v=FeJ5lbFjQ3I&ab_channel=Ubisoft */}
                 <iframe id="ytplayer" type="text/html" width="640" height="390"
-                src="http://www.youtube.com/embed/FeJ5lbFjQ3I?autoplay=1"
+                src="http://www.youtube.com/embed/UZBpSCh_qqA?autoplay=1"
                 frameborder="0"/>
                 </div>
             </section>
