@@ -54,13 +54,15 @@ app.post('/signup',(req,res)=>{
         mob:req.body.mob,
         email:req.body.email
     }
+    
     const doc = new userdata(user);
+
     doc.save((err) =>{
         if(err)
             res.send('false');
         else
             res.send('true');
-        
       })
 });
+
 app.listen(3000,()=>{console.log('server started at port 3000')});
