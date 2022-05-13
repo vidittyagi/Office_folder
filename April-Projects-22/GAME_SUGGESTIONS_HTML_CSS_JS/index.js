@@ -52,7 +52,6 @@ const suggestions = connection.model('suggestion',suggestion);
 const gamescore = connection.model('winnerList', winnerList);
 
 app.post('/signin',(req,res)=>{
-
     let userInfo = {
         username:req.body.username,
         password:req.body.password

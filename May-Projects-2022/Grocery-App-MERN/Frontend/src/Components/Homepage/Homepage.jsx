@@ -6,6 +6,29 @@ const HomePage= ()=>{
     const [username,setUsername] = useState("");
     const [mobileNo,setMobileNo] = useState("");
     const [review, setReview] = useState("");
+
+    const handleClick = async(e)=>{
+        e.preventDefault();
+        let userObj ={
+            username:username,
+            mobileNo:mobileNo,
+            review:review
+        }
+        // try {
+            // http://localhost:3000/
+            let url = 'http://localhost:3000/review';
+            let response = await fetch(url,{
+                method:'POST',
+                headers:{"content-type":"application/json"},
+                body: JSON.stringify(userObj)
+            });
+            let data = await response.text();
+            console.log(data);
+        // }
+        // catch(error){
+        //     console.log(error);
+        // }
+    }
     
     return(
         <div className="containerhomepage">
@@ -29,7 +52,6 @@ const HomePage= ()=>{
                  alt="Image Not Found" />
              </div>
          </section>
-
 
          <section className='section2'>
              <h6>Services</h6>
@@ -74,7 +96,7 @@ const HomePage= ()=>{
          <section className='section3'>
              <div className="divsection3">
              <div className="leftContainerSection3">
-                 <img 
+                 <img
                  style={{height:"100%",width:"100%"}}
                  src="https://cdn.pixabay.com/photo/2015/05/04/10/16/vegetables-752153_1280.jpg" 
                  alt="Image Not Found"
@@ -164,7 +186,7 @@ const HomePage= ()=>{
                  onChange={(e)=>{setReview(e.target.value)}}
                  style={{marginTop:"0.2rem",border:"1px solid black",padding:"0.5rem"}}
                  />
-                 <button className='buttonSection5'>Submit</button>
+                 <button onClick={(e)=>handleClick(e)} className='buttonSection5'>Submit</button>
              </form>
          </section>
         </div>
