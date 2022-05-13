@@ -14,7 +14,7 @@ const HomePage= ()=>{
             mobileNo:mobileNo,
             review:review
         }
-        // try {
+        try{
             // http://localhost:3000/
             let url = 'http://localhost:3000/review';
             let response = await fetch(url,{
@@ -24,15 +24,15 @@ const HomePage= ()=>{
             });
             let data = await response.text();
             console.log(data);
-        // }
-        // catch(error){
-        //     console.log(error);
-        // }
+        }
+        catch(error){
+            console.log(error);
+        }
     }
     
     return(
         <div className="containerhomepage">
-
+            <section></section>
          <section className='topHomepage'>
              <div className="div1topHomepage">
              <div className="container1div1topHomepage">

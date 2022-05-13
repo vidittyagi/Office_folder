@@ -37,9 +37,11 @@ app.post('/review', (req,res)=>{
     }
     
     let doc = new userGrocery(userReview);
-
     doc.save((err)=>{
-        if(err) res.send('false');
+        if(err) {
+            console.log(err);
+            res.send('false');
+        }
         else res.sendFile('true');
     })
 });
