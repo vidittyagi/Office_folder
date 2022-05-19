@@ -7,28 +7,28 @@ const HomePage= ()=>{
     const [mobileNo,setMobileNo] = useState("");
     const [review, setReview] = useState("");
 
-    const handleClick = async(e)=>{
-        e.preventDefault();
-        let userObj ={
-            username:username,
-            mobileNo:mobileNo,
-            review:review
-        }
-        try{
-            // http://localhost:3000/
-            let url = 'http://localhost:3000/review';
-            let response = await fetch(url,{
-                method:'POST',
-                headers:{"content-type":"application/json"},
-                body: JSON.stringify(userObj)
-            });
-            let data = await response.text();
-            console.log(data);
-        }
-        catch(error){
-            console.log(error);
-        }
-    }
+    // const handleClick = async(e)=>{
+    //     e.preventDefault();
+    //     let userObj ={
+    //         username:username,
+    //         mobileNo:mobileNo,
+    //         review:review
+    //     }
+    //     try{
+    //         // http://localhost:3000/
+    //         let url = 'http://localhost:3000/review';
+    //         let response = await fetch(url,{
+    //             method:'POST',
+    //             headers:{"content-type":"application/json"},
+    //             body: JSON.stringify(userObj)
+    //         });
+    //         let data = await response.text();
+    //         console.log(data);
+    //     }
+    //     catch(error){
+    //         console.log(error);
+    //     }
+    // }
     
     return(
         <div className="containerhomepage">

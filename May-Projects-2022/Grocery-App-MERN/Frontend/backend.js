@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
 mongoose.connect('mongodb://localhost:27017/myapp');
 
@@ -26,7 +27,7 @@ const user = new mongoose.Schema({
 });
 
 //model
-const userGrocery = connection.model('userGroceryData',user);
+const UserGrocery = connection.model('UserGrocery',user);
 
 
 app.post('/review', (req,res)=>{
@@ -35,11 +36,12 @@ app.post('/review', (req,res)=>{
         mobileNo:req.body.mobileNo,
         review:req.body.review
     }
-    
-    let doc = new userGrocery(userReview);
+    console.log("POST/Review");
+    console.log(userReview);
+    let doc = new UserGrocery(userReview);
     doc.save((err)=>{
+        console.log(userReview);
         if(err) {
-            console.log(err);
             res.send('false');
         }
         else res.sendFile('true');
