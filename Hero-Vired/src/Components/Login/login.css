@@ -5,8 +5,7 @@
 }
 
 .containerLogin{
-    height: 150vh;
-    background-color: #E3EEF3;
+    height: 130vh;
 }
 
 .headerLogin{
@@ -34,26 +33,80 @@
 }
 
 .section1{
-    height: 75%;
+    height: 88%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url('https://etimg.etb2bimg.com/photo/82058202.cms');
+    background-size: cover;
+}
+
+.container1Section1{
+    height: 70%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    background-color: lightgray;
+    border-radius: 25px;
+}
+
+.divContainer1Section1{
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.backgroundDiv{
-    height: 70%;
-    width: 80%;
-    background-color: white;
-}
-
-.leftdiv{
+.leftDivContainer1Section1{
     height: 100%;
-    width: 20%;
-    background-color: blue;
+    width: 50%;
+    margin-left: 3rem;
 }
 
 
-.rightDiv{
+.rightDivContainer1Section1{
+    height: 100%;
+    width: 50%;
+    margin-right: 3rem;
+}
 
+
+#h1RightDiv{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.rightDivForm{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.divFormLabel{
+    width: 58%;
+}
+
+#inputTagUsername{
+    height: 10%;
+    border: 1.5px solid black;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+#inputTagPassword{
+    height: 10%;
+    border: 1.5px solid black;
+    margin-top: 0.2rem;
+    margin-bottom: 1.5rem;
 }
