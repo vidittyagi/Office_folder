@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+
+.containerLogin{
+    height: 150vh;
+    background-color: #E3EEF3;
+}
+
+.headerLogin{
+    height: 12%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 0.2rem;
+}
+
+.container1Header{
+    height: 100%;
+    width: 30%;
+}
+
+.container2Header{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1{
+    height: 75%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backgroundDiv{
+    height: 70%;
+    width: 80%;
+    background-color: white;
+}
+
+.leftdiv{
+    height: 100%;
+    width: 20%;
+    background-color: blue;
+}
+
+
+.rightDiv{
+
+}
