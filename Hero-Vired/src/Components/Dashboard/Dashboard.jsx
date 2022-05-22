@@ -6,10 +6,10 @@ import {
     Row,
     Col,
 } from 'react-bootstrap';
-import {Route} from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import './dashboard.css';
-import Viewdashboard from '../Viewdashboard/Viewdashboard';
+import { useNavigate } from 'react-router-dom';
+
 
 // import fontawesome from '@fortawesome/fontawesome-free';
 // import FontAwesomeIcon from '@fortawesome/react-fontawesome';
@@ -28,7 +28,11 @@ const Dashboard = () => {
     const[dashboardName,setDashboardName] = useState("");
     const[dashboardTitle,setDashboardTitle] = useState("");
     let uniqueId = 0;
+    let navigate = useNavigate();
 
+    const handleViewDashboard =()=>{
+        navigate("/viewdashboard");
+    }
 
     const handleDashboardAddition = ()=>{
         if(dashboardName == "") {
@@ -104,10 +108,7 @@ const Dashboard = () => {
                             {value.subTitle[1]}
                             </Card.Text>
                         </Card.Body>
-                        <Button>
-                            View Dashboard
-                            {/* <Route exact path='/viewdashboard' element={<Viewdashboard></Viewdashboard>}></Route> */}
-                            </Button>
+                        <Button onClick={handleViewDashboard}>View Dashboard</Button>
                         </Card>
                         ))}
                         </Col>

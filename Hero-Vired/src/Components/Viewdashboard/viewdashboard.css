@@ -1,0 +1,49 @@
+.containerViewDashboard{
+    height: 150vh;
+}
+
+.section1Dashboard{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.leftSection1{
+    height: 100%;
+    width: 19%;
+    background-color: lightblue;
+}
+
+.imageLeftSection1{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.dashboardLeftSection1{
+    height: 85%;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.subDashboardLeftSection1{
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#pieChartID{
+    border: 1px solid black;
+}
+
+
