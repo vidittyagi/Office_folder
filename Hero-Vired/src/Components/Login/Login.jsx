@@ -42,7 +42,7 @@ const Login = () => {
 
                     <div className="leftDivContainer1Section1">
                         <img
-                        style={{height:"90%",width:"95%"}} 
+                        style={{height:"90%",width:"100%"}} 
                         src="https://www.financialexpress.com/wp-content/uploads/2022/03/Vired-x-DC-tile.jpg" 
                         alt="Image Not Found" 
                         />
