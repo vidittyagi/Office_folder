@@ -1,0 +1,27 @@
+.headerLogin{
+    height: 12%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 0.2rem;
+}
+
+.container1Header{
+    height: 100%;
+    width: 30%;
+}
+
+.container2Header{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+

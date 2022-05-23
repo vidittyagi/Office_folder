@@ -51,6 +51,10 @@ const Dashboard = () => {
         setDashboardTitle("");
         setAddDashboardFormToggle(false);
     }
+
+    const directToHomeDashboard = ()=>{
+        navigate("/dashboard");
+    }
     
     
     return ( 
@@ -68,10 +72,7 @@ const Dashboard = () => {
                     <div className="dashboardLeftSection1">
                         {/* use map after dynamic implementation */}
                         <div className="subDashboardLeftSection1">
-                        <Button variant="primary">Home Dashboard</Button>
-                        </div>
-                        <div className="subDashboardLeftSection1">
-                        <Button variant="primary">Faculty Dashboard</Button>
+                        <Button variant="primary" onClick={directToHomeDashboard}>Home Dashboard</Button>
                         </div>
                     </div>
                 </div>
@@ -85,11 +86,65 @@ const Dashboard = () => {
                     <Container>
                     <Row>
                         {
-                            homeDashboard.map((value, uniqueId = uuidv4())=>{
-                                return(
-                                    <Col key={uniqueId}>
+                        //     homeDashboard.map((value, uniqueId = uuidv4())=>{
+                        //         return(
+                        //             <Col key={uniqueId}>
+                        // {
+                        // ['light'].map((variant) => (
+                        // <Card
+                        // bg={variant.toLowerCase()}
+                        // key={variant}
+                        // text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+                        // style={{ width: '18rem' }}
+                        // className="mb-2"
+                        // id="cardMB-2"
+                        // >
+                        // <Card.Header>{value.heading}</Card.Header>
+                        // <Card.Body>
+                        // <Card.Title> {value.title} </Card.Title>
+                        //     <Card.Text>
+                        //     {value.subTitle[0]}
+                        //     </Card.Text>
+                        //     <Card.Text>
+                        //     {value.subTitle[1]}
+                        //     </Card.Text>
+                        // </Card.Body>
+                        // <Button onClick={handleViewDashboard}>View Dashboard</Button>
+                        // </Card>
+                        // ))}
+                        // </Col>
+                        //         )
+                        //     })
+                        }
+
+                        {/* <Col> */}
                         {
-                        ['light'].map((variant) => (
+                        // ['light',].map((variant) => (
+                        // <Card
+                        // bg={variant.toLowerCase()}
+                        // key={variant}
+                        // text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+                        // style={{ width: '18rem' }}
+                        // className="mb-2"
+                        // id="cardMB-2"
+                        // >
+                        // <Card.Header>Add Dashboard</Card.Header>
+                        // <Card.Body>
+                        // <Card.Title>
+                        // <Button variant="success" onClick={()=>{setAddDashboardFormToggle(true)}}>Add Dashboard</Button>{' '}
+                        // </Card.Title>
+                        //     {/* <FontAwesomeIcon icon="fa-solid fa-plus" /> */}
+                        // </Card.Body>
+                        // </Card>
+                        // ))
+                        }
+                        {/* </Col> */}
+
+
+
+                        <Col>
+                        {
+                        ['primary'].map((variant) => (
                         <Card
                         bg={variant.toLowerCase()}
                         key={variant}
@@ -98,27 +153,27 @@ const Dashboard = () => {
                         className="mb-2"
                         id="cardMB-2"
                         >
-                        <Card.Header>{value.heading}</Card.Header>
+                        <Card.Header>Faculty Dashboard</Card.Header>
                         <Card.Body>
-                        <Card.Title> {value.title} </Card.Title>
+                        <Card.Title> Domain Wise Analysis </Card.Title>
                             <Card.Text>
-                            {value.subTitle[0]}
+                            - Age Split
                             </Card.Text>
                             <Card.Text>
-                            {value.subTitle[1]}
+                            - Gender Split
+                            </Card.Text>
+                            <Card.Text>
+                            - City Count
                             </Card.Text>
                         </Card.Body>
                         <Button onClick={handleViewDashboard}>View Dashboard</Button>
                         </Card>
                         ))}
                         </Col>
-                                )
-                            })
-                        }
 
                         <Col>
                         {
-                        ['light',].map((variant) => (
+                        ['primary'].map((variant) => (
                         <Card
                         bg={variant.toLowerCase()}
                         key={variant}
@@ -127,16 +182,55 @@ const Dashboard = () => {
                         className="mb-2"
                         id="cardMB-2"
                         >
-                        <Card.Header>Add Dashboard</Card.Header>
+                        <Card.Header>Learner Dashboard</Card.Header>
                         <Card.Body>
-                        <Card.Title>
-                        <Button variant="success" onClick={()=>{setAddDashboardFormToggle(true)}}>Add Dashboard</Button>{' '}
-                        </Card.Title>
-                            {/* <FontAwesomeIcon icon="fa-solid fa-plus" /> */}
+                        <Card.Title> Amount Paid </Card.Title>
+                            <Card.Text>
+                            - Scholarship %
+                            </Card.Text>
+                            <Card.Text>
+                            - Loan Details (If any)
+                            </Card.Text>
+                            <Card.Text>
+                            - Emi details (if any)
+                            </Card.Text>
                         </Card.Body>
+                        <Button onClick={handleViewDashboard}>View Dashboard</Button>
                         </Card>
                         ))}
                         </Col>
+
+
+
+                        <Col>
+                        {
+                        ['primary'].map((variant) => (
+                        <Card
+                        bg={variant.toLowerCase()}
+                        key={variant}
+                        text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+                        style={{ width: '18rem' }}
+                        className="mb-2"
+                        id="cardMB-2"
+                        >
+                        <Card.Header>Delivery Dashboard</Card.Header>
+                        <Card.Body>
+                        <Card.Title> Domain Wise Analysis </Card.Title>
+                            <Card.Text>
+                            - Age Split
+                            </Card.Text>
+                            <Card.Text>
+                            - Gender Split
+                            </Card.Text>
+                            <Card.Text>
+                            - City Count
+                            </Card.Text>
+                        </Card.Body>
+                        <Button onClick={handleViewDashboard}>View Dashboard</Button>
+                        </Card>
+                        ))}
+                        </Col>
+                        
                     </Row>
                     </Container>
                     </div>

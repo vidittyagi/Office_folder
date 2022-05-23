@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from '../Header/Header';
 import './login.css';
 
 const Login = () => {
@@ -19,22 +20,8 @@ const Login = () => {
 
     return(
         <div className='containerLogin'>
-
-            <header className='headerLogin'>
-            <div className="container1Header">
-                <img
-                src="https://herovired.com/wp-content/uploads/2022/05/hero-vired-logo-footer.webp" 
-                alt="Image Not Found"
-                style={{height:"100%",width:"100%"}}
-                />
-            </div>
-            <div className="container2Header">
-                Login Page
-            </div>
-            </header>
-
+            <Header data={"Login Page"}></Header>
             <section className='section1'>
-
                     <div className="container1Section1">
                     <h2 id='h1RightDiv'>Dashboard Login</h2>
 

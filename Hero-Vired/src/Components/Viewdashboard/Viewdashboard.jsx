@@ -8,10 +8,21 @@ import {
 } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 import "./viewdashboard.css";
+import { useNavigate } from 'react-router-dom';
 
 const Viewdashboard = () => {
     const[dashboardItems,setDashboardItems]=useState([]);
-    return ( 
+    let navigate = useNavigate();
+
+    const handleAddFacultyPage = ()=>{
+        navigate("/addfaculty");
+    }
+
+    const directToHomeDashboard = ()=>{
+        navigate("/dashboard");
+    }
+    
+    return(
         <div className="containerViewDashboard">
             <div className="section1Dashboard">
             <div className="leftSection1">
@@ -24,10 +35,10 @@ const Viewdashboard = () => {
 
                     <div className="dashboardLeftSection1">
                         <div className="subDashboardLeftSection1">
-                        <Button variant="primary" >Home Dashboard</Button>
+                        <Button variant="primary" onClick={directToHomeDashboard}>Home Dashboard</Button>
                         </div>
                         <div className="subDashboardLeftSection1">
-                        <Button variant="primary">Add Faculty</Button>
+                        <Button variant="primary" onClick={handleAddFacultyPage}>Search Faculty</Button>
                         </div>
                     </div>
                 </div>
