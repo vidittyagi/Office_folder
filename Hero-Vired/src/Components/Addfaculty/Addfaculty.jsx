@@ -7,7 +7,25 @@ import {
 } from 'react-bootstrap';
 
 const Addfaculty = () => {
-    return ( 
+    const[displayFacultyName,setdisplayFacultyName] = useState("");
+    const[searchValue,setSearchValue] = useState("");
+    let facultyData = ["Deep","Shakul Malik", "Sanjoy Paul", "Aishwarya Holkar", "Vidit Tyagi"];
+
+    const handleFacultySearch= () => {
+        for(let i=0;i<facultyData.length;i++){
+            if(searchValue.localeCompare(facultyData[i]) == true){
+                console.log("V")
+                setdisplayFacultyName(facultyData[i]);
+                return;
+            }
+            else{
+                alert("Faculty Not Found");
+                return;
+            }
+        }
+    }
+
+    return(
         <div className="containerAddFaculty">
             <Header data={"Add Faculty Page"}></Header>
             
@@ -21,11 +39,19 @@ const Addfaculty = () => {
                         type="text"
                         name='facultyform'
                         className='searchBar'
+                        placeholder='search...'
+                        value={searchValue}
+                        onChange={(e)=>setSearchValue(e.target.value)}
                         />
-                        <Button variant="success" >
+                        <Button onClick={handleFacultySearch} variant="success">
                             Search
                         </Button>
                     </div>
+
+                    {/* <div className="modalSearch">
+                            <p>{displayFacultyName}</p>
+                    </div> */}
+
                     <div  className="divDropdown">
                     <Dropdown>
                         <Dropdown.Toggle variant="info" id="dropdown-basic">
