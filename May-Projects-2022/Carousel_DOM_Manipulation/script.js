@@ -2,12 +2,12 @@ let btn = document.querySelectorAll('[data-button-active]');
 
 btn.forEach((button)=>{
     button.addEventListener("click",()=>{
-        let offset = button.dataset.buttonActive === "right" ? 1 : -1;
+        let circularValue = button.dataset.buttonActive === "right" ? 1 : -1;
         let slides = button.closest("[carousel]").querySelector("[slides]");
 
         let activeSlide = slides.querySelector("[data-active]");
 
-        let newIdx = [...slides.children].indexOf(activeSlide) + offset;
+        let newIdx = [...slides.children].indexOf(activeSlide) + circularValue;
 
 
         if(newIdx < 0){
