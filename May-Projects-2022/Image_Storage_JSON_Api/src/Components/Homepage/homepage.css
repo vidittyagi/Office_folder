@@ -1,0 +1,70 @@
+.containerhomepage{
+    height: 100vh;
+    background-image: url('https://cdn.pixabay.com/photo/2013/06/20/13/52/world-140304_1280.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formHomepage{
+    height: 70%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 40px;
+    color: red;
+}
+
+.form{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.ID{
+    margin-top: 0.5rem;
+    border: 1.5px solid black;
+    padding: 0.2rem;
+}
+
+.name{
+    margin-top: 0.5rem;
+    border: 1.5px solid black;
+    padding: 0.2rem;
+}
+
+
+.url{
+    margin-top: 0.5rem;
+    border: 1.5px solid black;
+    margin-bottom: 1.5rem;
+    padding: 0.2rem;
+}
+
+.dataDisplayH1{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.idLabel{
+    margin-top: 0.5rem;
+}
+
+.nameLabel{
+    margin-top: 0.5rem;
+}
+
+.urlLabel{
+    margin-top: 0.5rem;
+}
