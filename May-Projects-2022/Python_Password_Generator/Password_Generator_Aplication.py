@@ -11,9 +11,9 @@ print("")
 if(username != "xyz@gmail.com" or password != "1234"):
     print("Wrong Username or Password")
 else:
-    #Make login true if username and password is valid 
+    #Make login true if username and password is valid
     login = True
-    #Apply while loop until login is true. 
+    #Apply while loop until login is true.
     #This funtionality is used to show the options again and again to user until he/she logs out by option 4
     while login:
         print("1. Enter Password")
