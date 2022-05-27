@@ -4,11 +4,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/07b9110941.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
     <title>Keypad Animation</title>
 </head>
 <body>
-    <section class="animation">
-        
-    </section>
+        <header class="animationHeader">
+            <div class="leftHeader">
+                <p>10:55</p>
+            </div>
+            <div class="rightHeader">
+                <i class="fa-solid fa-signal"></i>
+                <i class="fa-solid fa-wifi"></i>
+                <i class="fa-solid fa-battery-full"></i>
+            </div>
+        </header>
+
+        <section class="animationMiddleFirst">
+            <div class="resetPassword">
+                <i class="fa-solid fa-chevron-left" id="leftIDResetPass"></i>
+                <h1>Reset Password</h1>
+            </div>
+        </section>
+
+        <section class="animationMiddleSecond">
+            <div class="topMiddleSecond">
+                <p>
+                    Enter your resgistrated email address to receive 
+                    password reset instruction
+                </p>
+            </div>
+            <div class="bottomMiddleSecond">
+                <h1>Email Address</h1>
+                    <input
+                    type="text"
+                    class="inputFeild"
+                    placeholder="Type email address here..."
+                    ></input>
+            </div>
+            <button class="buttonResetPassword">Reset Password</button>
+        </section>
+
+        <section class="keypadSection">
+            <div class="row1Keypad">
+                <button class="keypadBtn">0</button>
+                <button class="keypadBtn">1</button>
+                <button class="keypadBtn">2</button>
+                <button class="keypadBtn">3</button>
+                <button class="keypadBtn">4</button>
+                <button class="keypadBtn">5</button>
+                <button class="keypadBtn">6</button>
+                <button class="keypadBtn">7</button>
+                <button class="keypadBtn">8</button>
+                <button class="keypadBtn">9</button>
+            </div>
+            <div class="row2Keypad">
+                <button class="keypadBtn">q</button>
+                <button class="keypadBtn">w</button>
+                <button class="keypadBtn">e</button>
+                <button class="keypadBtn">r</button>
+                <button class="keypadBtn">t</button>
+                <button class="keypadBtn">y</button>
+                <button class="keypadBtn">u</button>
+                <button class="keypadBtn">i</button>
+                <button class="keypadBtn">o</button>
+                <button class="keypadBtn">p</button>
+            </div>
+            <div class="row3Keypad">
+                <button class="keypadBtn">a</button>
+                <button class="keypadBtn">s</button>
+                <button class="keypadBtn">d</button>
+                <button class="keypadBtn">f</button>
+                <button class="keypadBtn">g</button>
+                <button class="keypadBtn">h</button>
+                <button class="keypadBtn">j</button>
+                <button class="keypadBtn">k</button>
+                <button class="keypadBtn">l</button>
+            </div>
+            <div class="row4Keypad">
+                <button class="keypadBtn" id="icon">
+                    <i class="fa-solid fa-circle-arrow-up"></i>
+                </button>
+                <button class="keypadBtn">z</button>
+                <button class="keypadBtn">x</button>
+                <button class="keypadBtn">c</button>
+                <button class="keypadBtn">v</button>
+                <button class="keypadBtn">b</button>
+                <button class="keypadBtn">n</button>
+                <button class="keypadBtn">m</button>
+                <button class="keypadBtn" id="icon">
+                    <i class="fa-solid fa-delete-left"></i>
+                </button>
+            </div>
+            <div class="row5Keypad">
+                <button class="keypad123Btn">123</button>
+                <button class="keypadSpaceBtn">space</button>
+                <button class="keypadReturnBtn">return</button>
+            </div>
+            <div class="row6Keypad">
+                <button class="keypadSmileBtn">
+                    <i class="fa-solid fa-face-smile"></i>
+                </button>
+                <button class="keypadEnterBtn">Enter</button>
+                <button class="keypadMicBtn">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+            </div>
+        </section>
 </body>
 </html>
