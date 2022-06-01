@@ -48,9 +48,9 @@ const Addfaculty = () => {
                         </Button>
                     </div>
 
-                    {/* <div className="modalSearch">
+                    <div className="modalSearch">
                             <p>{displayFacultyName}</p>
-                    </div> */}
+                    </div>
 
                     <div  className="divDropdown">
                     <Dropdown>
