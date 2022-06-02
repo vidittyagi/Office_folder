@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 
-mongoose.connect('mongodb://localhost:27017/Image_Storage');
+mongoose.connect('mongodb://localhost:27017/ImageStore');
 const connection = mongoose.connection;
 
 const imageSchema = new mongoose.Schema({
@@ -48,8 +48,9 @@ app.get("/getImage", (req, res)=>{
     imageModel.find({},(err,result)=>{
         if(err)
             console.log(err);
-        else
+        else{
             res.send(result);
+        }
     });
 });
 

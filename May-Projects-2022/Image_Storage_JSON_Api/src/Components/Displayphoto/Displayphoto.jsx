@@ -7,9 +7,10 @@ const Displayphoto = () => {
     const handleData = async()=>{
         try{
             let response = await fetch('http://localhost:5000/getImage');
-            let data = await response.text();
+            let data = await response.json();
+            console.log(Array.isArray(data));
             console.log(data);
-            arrayOfData.push(data);
+            setArrayOfData(data);
         }
         catch(error){
             console.log(error);
@@ -22,32 +23,22 @@ const Displayphoto = () => {
 
     return(
         <div className="containerDisplayphoto">
+            <h1>Images Loaded Previously</h1>
             <section className='sectionDP'>
                 {
                     arrayOfData.map((dataObj)=>{
-                        return
-                        (
-                        <div className="photoDiv">
-                            <h5>Id:{dataObj.id}</h5>
-                            <h3>Name:{dataObj.name}</h3>
-                            <img 
-                            src={dataObj.url}
-                            alt="Image Not Found"
-                            />
-                            </div>
+                        return(
+                        <div className='PhotoDiv'>
+                            <h5>{dataObj.id}</h5>
+                            <img id='ImageID' src={dataObj.url} alt="Image Not Found" />
+                            <h3>{dataObj.name}</h3>
+                        </div>
                         );
                     })
                 }
-                {/* <h5>Id:1</h5>
-                <h3>Name</h3>
-                <img 
-                style={{height:"100%",width:"100%"}}
-                src="https://cdn.pixabay.com/photo/2016/11/30/15/00/lighthouse-1872998_1280.jpg"
-                alt="Image not found"
-                /> */}
             </section>
         </div>
-     );
+    );
 }
  
 export default Displayphoto;
