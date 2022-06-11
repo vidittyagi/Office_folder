@@ -9,15 +9,32 @@ let robotDisplayPTag = document.querySelector(".roboReply");
 
 
 //queries is the static data object which holds hard coded replies pof chatbot
-let queries = {
-    "What's your name":"My name is Jarvis",
-    "How are you doing":"I am fine thank you",
-    "Michael Crichton":"Jurassic World Dominion ",
-    "Benedict Cumberbatch":"doctor strange",
-    "Yash":"K.G.F",
-    "Ajay Devgan":"RRR",
-    "":"Enter something"
-}
+let queries = [
+    {
+        request:["What's","your","name"],
+        response:"My name is Jarvis"
+    },
+    {
+        request:["How", "are", "you", "doing"],
+        response:"I am fine thank you"
+    },
+    {
+        request:["Michael", "Crichton"],
+        response:"Jurassic World Dominion"
+    },
+    {
+        request:["Benedict","Cumberbatch"],
+        response:"Doctor Strange"
+    },
+    {
+        request:["Yash"],
+        response:"K.G.F"
+    },
+    {
+        request:["Ajay", "Devgan"],
+        response:"RRR"
+    },
+];
 
 //Click event handler
 Btn.addEventListener("click",()=>{
@@ -27,11 +44,19 @@ Btn.addEventListener("click",()=>{
     let chatBotOutput = "";
 
     //check if key exists in queries object
-    if(key in queries){
-        chatBotOutput = queries[key];
+    let newKey = key.trim();
+    let arr = newKey.split(" ");
+    for(let i=0;i<queries.length;i++){
+        let obj = queries[i];
+        for(let j=0;j<arr.length;j++){
+            if(obj.request.includes(arr[j])){
+                chatBotOutput = obj.response;
+            }
+        }
     }
-    else{
-        chatBotOutput = "Invalid Query. Please enter a valid query";
+
+    if(chatBotOutput == ""){
+        chatBotOutput = "No Result Found";
     }
 
     //display output in user display box
@@ -45,8 +70,9 @@ Btn.addEventListener("click",()=>{
     `
     ${chatBotOutput}
     `;
-});
 
+    inputBox.value = "";
+});
 
 
 
