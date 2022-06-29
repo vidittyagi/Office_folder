@@ -8,7 +8,6 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 const Homepage = () => {
     const[theads,setTheads] = useState([]);
     const[rowCount,setRowCount] = useState(0);
-    let a = 10;
 
     useEffect(()=>{
         let columns = ["Month","Date","Vertical	Client","Program","Cohort","Session Type","Learner Name","Learner Email","Faculty Name","Live Status","Session Duration","Program Manager",	"Module Name","Week #","Session Rating","Feedback Count"];
