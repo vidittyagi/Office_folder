@@ -1,0 +1,114 @@
+.containerDashboard{
+    height: 150vh;
+}
+
+.section1Dashboard{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.leftSection1{
+    height: 100%;
+    width: 19%;
+    background-color: lightblue;
+}
+
+.imageLeftSection1{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.dashboardLeftSection1{
+    height: 85%;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.subDashboardLeftSection1{
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.rightsection1{
+    height: 100%;
+    width: 81%;
+}
+
+.topHeadingRS1{
+    height: 10%;
+    width: 100%;
+    padding: 1rem;
+    background-color: black;
+    color: red;
+}
+
+.cardsRS1{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: space-evenly;
+    margin-top: 1rem;
+}
+
+.cardRow{
+    margin-top: 1rem;
+}
+
+
+.addDashBoardModal{
+    height: 100%;
+    width: 95%;
+    position: absolute;
+    top: 20vh;
+    left: 3vw;
+    background-color: lightgray;
+    z-index: 3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.formAddDashboard{
+    height: 70%;
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    border: 2px solid black;
+}
+
+.labelAddDashboardForm{
+    margin-bottom: 0.5rem;
+}
+
+.dashboardFormNameTitle{
+    margin-bottom: 1rem;
+}
+
+.cancelFormAddDashboard{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}

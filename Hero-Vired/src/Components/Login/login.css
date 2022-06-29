@@ -1,0 +1,106 @@
+.containerLogin{
+    height: 130vh;
+}
+
+.headerLogin{
+    height: 12%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 0.2rem;
+}
+
+.container1Header{
+    height: 100%;
+    width: 30%;
+}
+
+.container2Header{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1{
+    height: 88%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url('https://etimg.etb2bimg.com/photo/82058202.cms');
+    background-size: cover;
+}
+
+.container1Section1{
+    height: 70%;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    background-color: lightgray;
+    border-radius: 25px;
+}
+
+.divContainer1Section1{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftDivContainer1Section1{
+    height: 100%;
+    width: 50%;
+    margin-left: 3rem;
+}
+
+
+.rightDivContainer1Section1{
+    height: 100%;
+    width: 50%;
+    margin-right: 3rem;
+}
+
+
+#h1RightDiv{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.rightDivForm{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.divFormLabel{
+    width: 58%;
+}
+
+#inputTagUsername{
+    height: 10%;
+    border: 1.5px solid black;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+#inputTagPassword{
+    height: 10%;
+    border: 1.5px solid black;
+    margin-top: 0.2rem;
+    margin-bottom: 1.5rem;
+}

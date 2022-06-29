@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+
+.containerModal{
+    height: 150vh;
+    background-color: aliceblue;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: red;
+    padding: 0.5rem;
+}
+
+.modalSection{
+    height: 90%;
+    background-image: url('https://cdn.pixabay.com/photo/2020/09/16/04/02/skyline-5575251_1280.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalDiv{
+    height: 70%;
+    width: 60%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+
+.firstDivModal{
+    height: 12%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: azure;
+}
+
+.h1firstDivModal{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondDivModal{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    align-items: flex-start;
+}
+
+.leftDivModal{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightDivModal{
+    height: 100%;
+    width: 50%;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.imageLeftDivModal{
+    height: 100%;
+    width: 50%;
+}
+
+.formModal{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+#imageLeftDivModal{
+    height: 100%;
+    width: 100%;
+}
+
+.labelModalTitle{
+    margin-bottom: 0.5rem;
+}
+
+.inputModal{
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
+
+
+

@@ -1,0 +1,42 @@
+Understanding the client and server side scripting
+Recording - Using Express JS using Mongo DB
+
+1. npm init: - This create a file called package.json which gives description of our project.
+Inside package.json file there is main script which contain name of file like "index.js" 
+which should be same as the file created. 
+2. npm install express
+3. node filename
+
+4. res.sendFile: - send a HTML file 
+
+
+app.use(): - this is written before post or get request 
+It is used without a database. 
+Using this use function we are trying to do some stuff before we connect to database.
+path is also optional in this function like "/app" something
+This is a temperory method so we need next parameter
+CODE: - 
+app.use((req,res,next)=>{
+    console.log("App use");
+    next();
+});
+eske just niche jo method hoga get ya post ka voh run ho jayega
+app.use() is a middle-ware between Frontend and Backend. 
+Yaha par saare middle ware operation perform kar sakte hai 
+yaha par database connectivity check kar sakte hai
+
+5. app.get(): - to get data from server for user(client side)
+6. app.post(): - to post something or send something to server from frontend 
+7. app.patch(): - patch will add to existing value(appending)
+8. app.delete(): - 
+9. app.put(): - will create a value or replace everything then only add what we are sending in put
+
+Database CONNECTIVITY
+1. npm i mongoose
+2. go to mongo db-> click on Connect-> connect with application-> copy that code
+3. connect with db
+4. create schema file: - Schema is blueprint of what you want to store in db
+
+
+
+

@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.containerhomepage{
+    height: 300vh;
+}
+
+.pehladiv{
+    height: 100vh;
+    background-image: url('../../Images/game-controller-g0c6b1a50d_1280.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+
+.seconddiv{
+    height: 100vh;
+    background-color: black;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.productimages{
+    height: 70%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    padding: 2rem;
+}
+
+.productimages:hover{
+    transform: scale(1.1);
+}
+
+.thirddiv{
+    background-image: url('https://cdn.pixabay.com/photo/2015/12/23/22/36/minecraft-1106252_1280.jpg');
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
