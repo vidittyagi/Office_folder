@@ -6,9 +6,11 @@ import './login.css';
 const Login = () => {
     const[username,setusername] = useState("");
     const[password,setpassword] = useState("");
+    const[mob,setMob] = useState("");
+    const[email,setEmail] = useState("");
     let navigate = useNavigate();
 
-    const handleClick = ()=>{    
+    const handleClick = ()=>{
         if(username === 'u' && password === 'p'){
             navigate("/homepage");
             return;
@@ -34,8 +36,6 @@ const Login = () => {
                         alt="Image Not Found" 
                         />
                     </div>
-    
-                            
                             <div className="rightDivContainer1Section1">
                             <form action="" className='rightDivForm'>
                                 <h3 style={{marginBottom:"1rem"}}>Start Learning!</h3>
@@ -64,6 +64,33 @@ const Login = () => {
                                 onChange={(e)=>{setpassword(e.target.value)}}
                                 placeholder='Enter your password'
                                 />
+
+                                <div className="divFormLabel">
+                                <label htmlFor="mob">Mobile</label>
+                                </div>
+                                
+                                <input
+                                type="text"
+                                name="mob"
+                                id="inputTagPassword"
+                                value={mob}
+                                onChange={(e)=>{setMob(e.target.value)}}
+                                placeholder='Enter your mobile number'
+                                />
+
+                                <div className="divFormLabel">
+                                <label htmlFor="email">Email</label>
+                                </div>
+                                
+                                <input
+                                type="text"
+                                name="email"
+                                id="inputTagPassword"
+                                value={email}
+                                onChange={(e)=>{setEmail(e.target.value)}}
+                                placeholder='Enter your email'
+                                />
+
                                 <button type="button" onClick={handleClick} class="btn btn-success">Login</button>
                             </form>
     

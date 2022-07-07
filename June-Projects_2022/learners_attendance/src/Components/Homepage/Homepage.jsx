@@ -4,18 +4,17 @@ import {Table, Button} from 'react-bootstrap';
 import "./homepage.css";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
-
 const Homepage = () => {
     const[theads,setTheads] = useState([]);
     const[rowCount,setRowCount] = useState(0);
 
     useEffect(()=>{
-        let columns = ["Month","Date","Vertical	Client","Program","Cohort","Session Type","Learner Name","Learner Email","Faculty Name","Live Status","Session Duration","Program Manager",	"Module Name","Week #","Session Rating","Feedback Count"];
+        let columns = ["Month","Date","Name"];
         setTheads(columns);
-        setRowCount(3);
+        setRowCount(2);
     },[]);
 
-    const handleAddRowClick = ()=>{
+    const handleAddRowClick= ()=>{
         setRowCount(rowCount+1);
     }
    
@@ -41,7 +40,7 @@ const Homepage = () => {
                                 <>
                                 <tr>
                                 <td>{index+1}</td>
-                                {Array.from({ length: 16 }).map((_, index) => (
+                                {Array.from({ length: 3 }).map((_, index) => (
                                     <td key={index}>Table cell {index}</td>
                                 ))}
                                 </tr>

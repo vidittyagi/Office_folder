@@ -11,19 +11,19 @@ mongoose.connect('mongodb://localhost:27017/myapp');
 
 const connection = mongoose.connection;
   const user = new mongoose.Schema({
-    username: {
+    username:{
       type: String,
       required: true
     },
-    password: {
+    password:{
       type: String,
       required: true
     },
-    mob: {
+    mob:{
         type: String,
         required: true
       },
-    email: {
+    email:{
         type: String,
         required: true
       },
