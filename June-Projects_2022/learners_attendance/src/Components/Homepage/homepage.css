@@ -11,5 +11,16 @@
     cursor: pointer;
 }
 
+.changeTableDataDiv{
+    height: 50%;
+    width: 100%;
+    background-color: lightgray;
+}
 
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 

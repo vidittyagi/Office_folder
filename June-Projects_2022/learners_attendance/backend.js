@@ -31,11 +31,19 @@ const leanersDashBoard = new mongoose.Schema({
 });
 
 const learnerInfoSchema = new mongoose.Schema({
-    
+    rowCount:{
+        type:Array,
+        required:true
+    },
+    theads:{
+        type:Array,
+        required:true
+    },
 });
 
 //model
 const UserLeaners = connection.model('UserLeaners',leanersDashBoard);
+const tableData = connection.model('tableData',learnerInfoSchema);
 
 app.post('/signup', (req,res)=>{
     let userDetails = {
@@ -76,8 +84,34 @@ app.post('/', (req,res)=>{
 });
 
 
-app.get("/tabledata",(req,res)=>{
-    
+app.post("/tablechangedata",(req,res)=>{
+    let data = {
+        rowCount:req.body.rowCount,
+        theads:req.body.theads,
+    }
+    let doc = new tableData(data);
+    doc.save((err)=>{
+        console.log(data);
+        if(err) res.send('false');
+        else res.send('true');
+    });
 });
+
+// app.get("/gettablechangedata",(req,res)=>{
+//     let data = {
+//         rowCount:req.body.rowCount,
+//         theads:req.body.theads,
+//     }
+//     tableData.find(data,(err,messages)=>{
+//         if(messages.length == 0){
+//             res.send("No Data");
+//         }
+//         else{
+//             res.send();
+//         }
+//     });
+// });
+
+
 
 app.listen(3000,()=>{console.log('Server started at port 3000')});

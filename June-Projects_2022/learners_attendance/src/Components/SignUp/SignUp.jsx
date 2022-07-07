@@ -22,7 +22,7 @@ const SignUp = () => {
           password : pass,
           mob: mobile,
           email:email
-      }
+        }
   
       let response = await fetch('http://localhost:3000/signup',{
           method:"POST",
