@@ -9,21 +9,26 @@ const Homepage = () => {
     const[theads,setTheads] = useState([]);
     const[rowCount,setRowCount] = useState([]);
     const[changeTableData,setChangeTableData] = useState(false);
-    const[inputValue,setInputValue] = useState("");
     const[rowNumber,setRowNumber] = useState(0);
     const[columnNumber,setColumnNumber] = useState(0);
     const[changedValue,setChangedValue] = useState("");
 
     useEffect(()=>{
+        async function getData(){
         let columns = ["Month","Date","Name"];
-        setTheads(columns);
-        let array = [
-            ["Table cell  0","Table cell 1","Table cell 2"],
-            ["Table cell  1","Table cell 2","Table cell 2"],
-        ];
-        // let response = await fetch('http://localhost:3000/tablechangedata');
-        // let data = await response.json();
-        setRowCount(array);
+        try{
+        let response = await fetch('http://localhost:3000/gettablechangedata');
+        let data = await response.json();
+        // console.log(data);
+        // console.log(data[data.length-1].rowCount);
+        // console.log(data[data.length-1].theads);
+        setTheads(data[data.length-1].theads);
+        setRowCount(data[data.length-1].rowCount);
+        } catch (error){
+            console.log(error);
+        }
+        }
+        getData();
     },[]);
 
     const handleAddRowClick=()=>{
@@ -60,7 +65,7 @@ const Homepage = () => {
         let val = changedValue;
         let rowDataArray = rowCount[i];
         rowDataArray[j] = val;
-        try {
+        try{
             let dataObj = {
                 rowCount:rowCount,
                 theads:theads
@@ -71,7 +76,7 @@ const Homepage = () => {
                 body:JSON.stringify(dataObj)
             });
             let data = await response.text();
-            console.log(data);
+            // console.log(data); response True
         } catch(error){
             console.log("Error");
         }

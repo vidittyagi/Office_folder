@@ -43,7 +43,7 @@ const learnerInfoSchema = new mongoose.Schema({
 
 //model
 const UserLeaners = connection.model('UserLeaners',leanersDashBoard);
-const tableData = connection.model('tableData',learnerInfoSchema);
+const TableData = connection.model('TableData',learnerInfoSchema);
 
 app.post('/signup', (req,res)=>{
     let userDetails = {
@@ -89,7 +89,8 @@ app.post("/tablechangedata",(req,res)=>{
         rowCount:req.body.rowCount,
         theads:req.body.theads,
     }
-    let doc = new tableData(data);
+    // console.log(data);
+    let doc = new TableData(data);
     doc.save((err)=>{
         console.log(data);
         if(err) res.send('false');
@@ -97,21 +98,16 @@ app.post("/tablechangedata",(req,res)=>{
     });
 });
 
-// app.get("/gettablechangedata",(req,res)=>{
-//     let data = {
-//         rowCount:req.body.rowCount,
-//         theads:req.body.theads,
-//     }
-//     tableData.find(data,(err,messages)=>{
-//         if(messages.length == 0){
-//             res.send("No Data");
-//         }
-//         else{
-//             res.send();
-//         }
-//     });
-// });
-
-
+app.get("/gettablechangedata",(req,res)=>{
+    TableData.find({},(err,messages)=>{
+        if(messages.length == 0){
+            res.send("No Data");
+        }
+        else{
+            // console.log(messages);
+            res.send(messages);
+        }
+    });
+});
 
 app.listen(3000,()=>{console.log('Server started at port 3000')});

@@ -35,8 +35,8 @@ const SignUp = () => {
         navigate("/homepage");
       }
       else alert("Server Error");
-      } 
-      catch (error) {
+      }
+      catch (error){
         console.log(error);
       }
     }
