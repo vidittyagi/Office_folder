@@ -9,8 +9,8 @@ const Homepage = () => {
     const[theads,setTheads] = useState([]);
     const[rowCount,setRowCount] = useState([]);
     const[changeTableData,setChangeTableData] = useState(false);
-    const[rowNumber,setRowNumber] = useState(0);
-    const[columnNumber,setColumnNumber] = useState(0);
+    const[rowNumber,setRowNumber] = useState("");
+    const[columnNumber,setColumnNumber] = useState("");
     const[changedValue,setChangedValue] = useState("");
 
     useEffect(()=>{
@@ -22,8 +22,23 @@ const Homepage = () => {
         // console.log(data);
         // console.log(data[data.length-1].rowCount);
         // console.log(data[data.length-1].theads);
+        let newrowCount = data[data.length-1].rowCount;
+        let newtheads = data[data.length-1].theads;
+
+        let arr = [];
+        for(let i=0;i<newrowCount.length;i++){
+            let arr1 = [];
+            for(let j=0;j<newtheads.length;j++){
+                // console.log(data[data.length-1].rowCount[i][j]);
+                if(newrowCount[i][j] === '') arr1[j] = "";
+                else arr1[j] = newrowCount[i][j];
+            }
+            arr.push(arr1);
+        }
+
+        console.log(arr);
         setTheads(data[data.length-1].theads);
-        setRowCount(data[data.length-1].rowCount);
+        setRowCount(arr);
         } catch (error){
             console.log(error);
         }
@@ -31,40 +46,48 @@ const Homepage = () => {
         getData();
     },[]);
 
-    const handleAddRowClick=()=>{
-        setRowCount(rowCount+1);
+    const handleAddRowClick=async()=>{
+        let arr = [];
+        for(let i=0;i<theads.length;i++){
+            arr[i] = "";
+        }
+        rowCount.push(arr);
+        setRowCount(rowCount);
+        // console.log(rowCount);
+        let obj = {
+         rowCount:rowCount,
+         theads:theads
+        }
+        try{
+            let response = await fetch('http://localhost:3000/tablechangedata',{
+            method:"POST",
+            headers:{"content-type":"application/json"},
+            body:JSON.stringify(obj)
+        });
+        let data = await response.text();
+        console.log(data);
+        alert("Row Added");
+        }
+        catch (error){
+            alert(error);
+        }
     }
 
     const handleChangedData = async(e)=>{
-        // let userObj={
-        //     username : username,
-        //     password : pass,
-        //     mob: mobile,
-        //     email:email
-        //   }
-    
-        // let response = await fetch('http://localhost:3000/signup',{
-        //     method:"POST",
-        //     headers:{"content-type": "application/json"},
-        //     body:JSON.stringify(userObj)
-        // });
-        // let data = await response.text();
-        // console.log(data);
-        // if(data == 'true'){
-        //   navigate("/homepage");
-        // }
-        // else alert("Server Error");
-        // } 
-        // catch (error) {
-        //   console.log(error);
-        // }
         e.preventDefault();
         // console.log(changedValue);
-        let i = rowNumber-1;//ith row
-        let j = columnNumber-1;//jth column
+        let i = parseInt(rowNumber) - 2;//ith row
+        let j = parseInt(columnNumber) - 2;//jth column
         let val = changedValue;
-        let rowDataArray = rowCount[i];
-        rowDataArray[j] = val;
+        if(i>=0 && j>=0 && i<rowCount.length && j<theads.length){
+            let rowDataArray = rowCount[i];
+            rowDataArray[j] = val;
+        }
+        else{
+            alert("Please enter valid row and column id");
+            return;
+        }
+        
         try{
             let dataObj = {
                 rowCount:rowCount,
@@ -83,6 +106,36 @@ const Homepage = () => {
         setRowCount(rowCount);
         setChangeTableData(false);
     }
+
+    const handleAddColumnClick = async()=>{
+        let colVal = prompt("Enter column Value");
+        // console.log(colVal);
+        theads.push(colVal);
+        // setTheads(theads);
+        // let arr = [];
+        // for(let i=0;i<theads.length;i++){
+        //     arr[i] = "Enter a value";
+        // }
+        // rowCount.push(arr);
+
+        let obj = {
+            rowCount:rowCount,
+            theads:theads
+           }
+           try{
+               let response = await fetch('http://localhost:3000/tablechangedata',{
+               method:"POST",
+               headers:{"content-type":"application/json"},
+               body:JSON.stringify(obj)
+           });
+           let data = await response.text();
+           console.log(data);
+           alert("Column Added");
+           }
+           catch (error){
+               alert(error);
+           }
+    }
    
     return(
         <div className='containerHomepage'>
@@ -95,9 +148,6 @@ const Homepage = () => {
                         {theads.map((columnValue)=>(
                             <th>{columnValue}</th>
                         ))}
-                        </tr>
-                        <tr>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -156,13 +206,20 @@ const Homepage = () => {
             )
             :
             (
-                <button onClick={()=>{setChangeTableData(true)}}>Edit the Table</button>
+                <Button variant='success' onClick={()=>{setChangeTableData(true)}}>
+                            Edit the Table
+                    </Button>
             )
         }
             <div className='addDiv'>
-                        <Button onClick={handleAddRowClick}>
-                                Add Row <AddCircleIcon/>
-                        </Button>
+                    <Button onClick={handleAddRowClick}>
+                            Add Row <AddCircleIcon/>
+                    </Button>
+            </div>
+            <div className='addDiv'>
+                    <Button onClick={handleAddColumnClick}>
+                            Add Column <AddCircleIcon/>
+                    </Button>
             </div>
             </section>
         </div>

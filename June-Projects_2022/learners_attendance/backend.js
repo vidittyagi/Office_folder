@@ -45,6 +45,7 @@ const learnerInfoSchema = new mongoose.Schema({
 const UserLeaners = connection.model('UserLeaners',leanersDashBoard);
 const TableData = connection.model('TableData',learnerInfoSchema);
 
+
 app.post('/signup', (req,res)=>{
     let userDetails = {
         username:req.body.username,
@@ -83,7 +84,6 @@ app.post('/', (req,res)=>{
     });
 });
 
-
 app.post("/tablechangedata",(req,res)=>{
     let data = {
         rowCount:req.body.rowCount,
@@ -99,6 +99,9 @@ app.post("/tablechangedata",(req,res)=>{
 });
 
 app.get("/gettablechangedata",(req,res)=>{
+    // TableData.deleteMany({},()=>{
+    //     console.log("Deleted");
+    // });
     TableData.find({},(err,messages)=>{
         if(messages.length == 0){
             res.send("No Data");
