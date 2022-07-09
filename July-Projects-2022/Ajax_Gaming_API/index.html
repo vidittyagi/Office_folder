@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>AJAX GAME</title>
+</head>
+<body>
+    <header class="header">
+        <img 
+        id="logoHv"
+        src="data:image/png;base64,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" 
+        alt="IMAGE NOT FOUND"
+        />
+    </header>
+    <section>
+        <div class="container">
+            <div class="search">
+                <input
+                id="inputBar"
+                placeholder="Search game name"
+                type="text"
+                />
+                <button class="searchBtn">Search</button>
+            </div>
+            <div class="display">
+
+            </div>
+        </div>
+    </section>
+    
+    <script src="./Ajax.js"></script>
+</body>
+</html>
